@@ -1,0 +1,5 @@
+.e-brand {
+  display: block;
+  @include bg-cover;
+  @include size(120px, 24px);
+}

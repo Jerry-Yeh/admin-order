@@ -1,0 +1,16 @@
+//
+// select
+//
+
+.m-select {
+  display: flex;
+  justify-content: space-between;
+  &__selector {
+    position: relative;
+    &__icon {
+      display: flex;
+      align-items: center;
+      height: 24px;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+.h- {
+  &text-center {
+    text-align: center !important;
+  }
+  &text-right {
+    text-align: right !important;
+  }
+
+  &hide-text {
+    font-size: 0 !important;
+    color: transparent !important;
+    text-shadow: none !important;
+    background-color: transparent !important;
+    border: 0 !important;
+  }
+}

@@ -1,0 +1,82 @@
+// 背景填滿置中
+@mixin bg-cover {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+// 尺寸
+@mixin size($w, $h) {
+  width: $w;
+  height: $h;
+}
+
+// 內容水平垂直置中
+@mixin content-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// 容器水平垂直置中
+@mixin container-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// font awesome
+@mixin fontAwesome-check {
+  content: "\f00c";
+  font-family: "Font Awesome 5 Pro";
+  font-weight: 900;
+}
+
+// 點擊後的樣式
+@mixin link-hover {
+  &:hover,
+  &:focus,
+  &:active {
+    @content;
+  }
+}
+
+// 按鈕顏色
+@mixin btn-color($bg-c, $text-c) {
+  background-color: $bg-c;
+  color: $text-c;
+  @include link-hover {
+    background-color: darken($bg-c, 15%);
+    color: $text-c;
+  }
+} 
+
+// 斷點
+@mixin large-desktop {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+@mixin mobile {
+  @media (min-width: 576px) {
+    @content;
+  }
+}
+
+// m-modal__container-left-width
+@function breakpoint-min($name, $breakpoints: $grid-breakpoints) {
+  $min: map-get($breakpoints, $name);
+  @return if($min != 0, $min, null);
+}
+

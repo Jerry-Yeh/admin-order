@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>admin order</title>
+
+  <meta property="og:title" content="訂單管理系統" />
+  <meta property="og:description" content="訂單管理的後台系統" />
+  <meta property="og:site_name" content="訂單管理系統" />
+  <meta property="og:locale" content="zh_TW" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.5.4/c3.min.css">
+  <link rel="stylesheet" href="css/all.css">
+</head>
+
+<body>
+  <!-- 導覽列 -->
+  <div class="m-navbar mb-3">
+    <div class="container">
+      <h1 class="m-navbar__brand">
+        <a class="m-navbar__brand__link" href="index.html">Shoptime</a>
+      </h1>
+      <ul class="m-navbar__list js-m-navbar__list">
+        <li>
+          <a class="m-navbar__link m-navbar__link--active" href="index.html">HOME</a>
+        </li>
+        <li>
+          <a class="m-navbar__link" href="orders.html">ORDERS</a>
+        </li>
+        <li>
+          <a class="m-navbar__link" href="product.html">PRODUCT</a>
+        </li>
+      </ul>
+      <div class="m-navbar__user">
+        <a class="m-navbar__user__link" href="#">ADMIN</a>
+      </div>
+      <a class="m-navbar__button js-m-navbar__button" href="#">
+        <i class="fas fa-bars"></i>
+      </a>
+    </div>
+  </div>
+  <!-- 標題 -->
+  <div class="p-info">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h2 class="p-info__title">OVERVIEW</h2>
+        </div>
+        <div class="col-md-6">
+          <div class="p-info__condition">
+            <div class="p-info__condition__date">
+              <span>2018/6/6</span>
+              <i class="fas fa-caret-right p-info__arrow p-info__arrow--right"></i>
+              <span>2018/6/13</span>
+            </div>
+            <div class="p-info__condition__unit js-p-info__condition__unit">
+              <span>Weekly</span>
+              <i class="fas fa-sort-down p-info__arrow p-info__arrow--down js-p-info__arrow--down"></i>
+              <ul class="m-list m-list_p-home js-m-list">
+                <li class="m-list__item">Daily</li>
+                <li class="m-list__item">Weekly</li>
+                <li class="m-list__item">Monthly</li>
+                <li class="m-list__item">Yearly</li>
+                <li class="m-list__item">Custom</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 總額 -->
+  <div class="p-total">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="p-total__col">
+            <div>
+              <i class="p-total__col__icon fas fa-hand-holding-usd"></i>
+              <span>TOTAL REVENUE</span>
+            </div>
+            <div class="p-total__col__num p-total__col__num--revenue">54,540</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-total__col">
+            <div>
+              <i class="p-total__col__icon fas fa-boxes"></i>
+              <span>TOTAL COST</span>
+            </div>
+            <div class="p-total__col__num p-total__col__num--cost">12,660</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-total__col">
+            <div>
+              <i class="p-total__col__icon fas fa-money-bill"></i>
+              <span>NET INCOME</span>
+            </div>
+            <div class="p-total__col__num p-total__col__num--net">41,880</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 圖表 -->
+  <div class="p-chart">
+    <div class="container">
+      <div class="p-chart__content">
+        <div class="p-chart__title">Activity</div>
+        <div class="p-chart__chart js-p-chart__chart"></div>
+      </div>
+    </div>
+  </div>
+  <!-- 數據 -->
+  <div class="p-data">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mb-2 mb-md-0">
+          <div class="p-data__col">
+            <h3 class="p-data__col__title">Transaction Website</h3>
+            <ul class="m-transaction">
+              <li class="m-transaction__item">
+                <i class="fab fa-facebook-square m-transaction__item__icon"></i>
+                <h4 class="m-transaction__item__title">Facebook.com</h4>
+                <span class="m-transaction__item__total">45,836</span>
+                <div class="m-transaction__item__rate m-transaction__item__rate--rise js-m-transaction__item__rate">
+                  <i class="fas fa-arrow-up"></i>
+                  <span>20%</span>
+                  <div class="m-transaction__item__detail">
+                    <div class="m-transaction__item__detail__increase">
+                      INCREASE
+                      <b class="m-transaction__item__detail__increase__num">899</b>
+                      VIEWS
+                    </div>
+                    <div class="m-transaction__item__detail__last">last week: 44,937</div>
+                  </div>
+                  <div class="m-transaction__item__arrow"></div>
+                </div>
+              </li>
+              <li class="m-transaction__item">
+                <i class="fab fa-google m-transaction__item__icon"></i>
+                <h4 class="m-transaction__item__title">google.com</h4>
+                <span class="m-transaction__item__total">23,582</span>
+                <div class="m-transaction__item__rate m-transaction__item__rate--rise js-m-transaction__item__rate">
+                  <i class="fas fa-arrow-up"></i>
+                  <span>12%</span>
+                  <div class="m-transaction__item__detail">
+                    <div class="m-transaction__item__detail__increase">
+                      INCREASE
+                      <b class="m-transaction__item__detail__increase__num">899</b>
+                      VIEWS
+                    </div>
+                    <div class="m-transaction__item__detail__last">last week: 44,937</div>
+                  </div>
+                  <div class="m-transaction__item__arrow"></div>
+                </div>
+              </li>
+              <li class="m-transaction__item">
+                <i class="fab fa-stripe-s m-transaction__item__icon"></i>
+                <h4 class="m-transaction__item__title">Shopify.com</h4>
+                <span class="m-transaction__item__total">2,489</span>
+                <div class="m-transaction__item__rate m-transaction__item__rate--drop js-m-transaction__item__rate">
+                  <i class="fas fa-arrow-down"></i>
+                  <span>15%</span>
+                  <div class="m-transaction__item__detail">
+                    <div class="m-transaction__item__detail__increase">
+                      INCREASE
+                      <b class="m-transaction__item__detail__increase__num">899</b>
+                      VIEWS
+                    </div>
+                    <div class="m-transaction__item__detail__last">last week: 44,937</div>
+                  </div>
+                  <div class="m-transaction__item__arrow"></div>
+                </div>
+              </li>
+              <li class="m-transaction__item">
+                <i class="fab fa-wordpress m-transaction__item__icon"></i>
+                <h4 class="m-transaction__item__title">Wordpress.com</h4>
+                <span class="m-transaction__item__total">1,057</span>
+                <div class="m-transaction__item__rate m-transaction__item__rate--drop js-m-transaction__item__rate">
+                  <i class="fas fa-arrow-down"></i>
+                  <span>30%</span>
+                  <div class="m-transaction__item__detail">
+                    <div class="m-transaction__item__detail__increase">
+                      INCREASE
+                      <b class="m-transaction__item__detail__increase__num">899</b>
+                      VIEWS
+                    </div>
+                    <div class="m-transaction__item__detail__last">last week: 44,937</div>
+                  </div>
+                  <div class="m-transaction__item__arrow"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="p-data__col">
+            <div class="p-data__col__title">Latest Orders</div>
+            <ul class="m-order">
+              <li class="m-order__item">
+                <div class="m-order__item__img"
+                  style="background-image: url(https://randomuser.me/api/portraits/men/40.jpg);"></div>
+                <div class="m-order__item__content">
+                  <h5 class="m-order__item__content__product">Vintage T-shirt</h5>
+                  <div class="m-order__item__content__time">
+                    <i class="fas fa-clock m-order__item__content__time__icon"></i>
+                    <span>2018/6/13 13:42</span>
+                  </div>
+                  <div class="m-order__item__content__user">
+                    <i class="fas fa-male m-order__item__content__user__icon"></i>
+                    <span>Belle Willis</span>
+                  </div>
+                </div>
+                <div class="m-order__item__total">
+                  <div class="m-order__item__total__title">Total</div>
+                  <div class="m-order__item__total__price">3,200</div>
+                </div>
+              </li>
+              <li class="m-order__item">
+                <div class="m-order__item__img"
+                  style="background-image: url(https://randomuser.me/api/portraits/men/5.jpg);"></div>
+                <div class="m-order__item__content">
+                  <h5 class="m-order__item__content__product">Vintage T-shirt</h5>
+                  <div class="m-order__item__content__time">
+                    <i class="fas fa-clock m-order__item__content__time__icon"></i>
+                    <span>2018/6/13 13:42</span>
+                  </div>
+                  <div class="m-order__item__content__user">
+                    <i class="fas fa-male m-order__item__content__user__icon"></i>
+                    <span>Belle Willis</span>
+                  </div>
+                </div>
+                <div class="m-order__item__total">
+                  <div class="m-order__item__total__title">Total</div>
+                  <div class="m-order__item__total__price">3,200</div>
+                </div>
+              </li>
+              <li class="m-order__item">
+                <div class="m-order__item__img"
+                  style="background-image: url(https://randomuser.me/api/portraits/men/34.jpg);"></div>
+                <div class="m-order__item__content">
+                  <h5 class="m-order__item__content__product">Vintage T-shirt</h5>
+                  <div class="m-order__item__content__time">
+                    <i class="fas fa-clock m-order__item__content__time__icon"></i>
+                    <span>2018/6/13 13:42</span>
+                  </div>
+                  <div class="m-order__item__content__user">
+                    <i class="fas fa-male m-order__item__content__user__icon"></i>
+                    <span>Belle Willis</span>
+                  </div>
+                </div>
+                <div class="m-order__item__total">
+                  <div class="m-order__item__total__title">Total</div>
+                  <div class="m-order__item__total__price">3,200</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- fontawesome -->
+  <script src="https://kit.fontawesome.com/a4ac11d7bb.js"></script>
+
+  <!-- bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+  <!-- 圖表 -->
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.5.4/c3.min.js"></script>
+
+  <!-- custom js -->
+  <script src="js/all.js"></script>
+
+</body>
+
+</html>

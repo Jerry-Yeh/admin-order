@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>admin order</title>
+
+  <meta property="og:title" content="訂單管理系統" />
+  <meta property="og:description" content="訂單管理的後台系統" />
+  <meta property="og:site_name" content="訂單管理系統" />
+  <meta property="og:locale" content="zh_TW" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.5.4/c3.min.css">
+  <link rel="stylesheet" href="css/all.css">
+</head>
+
+<body>
+  <!-- 導覽列 -->
+  <div class="m-navbar mb-3">
+    <div class="container">
+      <h1 class="m-navbar__brand">
+        <a class="m-navbar__brand__link" href="index.html">Shoptime</a>
+      </h1>
+      <ul class="m-navbar__list js-m-navbar__list">
+        <li>
+          <a class="m-navbar__link" href="index.html">HOME</a>
+        </li>
+        <li>
+          <a class="m-navbar__link m-navbar__link--active" href="orders.html">ORDERS</a>
+        </li>
+        <li>
+          <a class="m-navbar__link" href="product.html">PRODUCT</a>
+        </li>
+      </ul>
+      <div class="m-navbar__user">
+        <a class="m-navbar__user__link" href="#">ADMIN</a>
+      </div>
+      <a class="m-navbar__button js-m-navbar__button" href="#">
+        <i class="fas fa-bars"></i>
+      </a>
+    </div>
+  </div>
+  <!-- 訂單 -->
+  <section>
+    <div class="container">
+      <!-- 訂單選項 -->
+      <div class="m-select">
+        <div class="m-form">
+          <div class="m-form__checkbox m-form__checkbox--border ml-md-2 mr-md-1">
+            <input type="checkbox" id="order-status">
+            <label for="order-status" class="js-status"></label>
+          </div>
+          <div class="m-select__selector js-m-select__selector mr-2">
+            <i class="fas fa-caret-down m-select__selector__icon"></i>
+            <ul class="m-list m-list--status">
+              <li class="m-list__item">Select All</li>
+              <li class="m-list__item">Unselect All</li>
+              <li class="m-list__item">Paid</li>
+              <li class="m-list__item">Unpaid</li>
+              <li class="m-list__item">Shipping</li>
+              <li class="m-list__item">Done</li>
+            </ul>
+          </div>
+          <div class="m-select__selector js-m-select__selector mr-2">
+            <i class="fas fa-tags m-select__selector__icon"></i>
+            <ul class="m-list m-list--status">
+              <li class="m-list__item">Change Status to…</li>
+              <li class="m-list__item">Paid</li>
+              <li class="m-list__item">Unpaid</li>
+              <li class="m-list__item">Shipping</li>
+              <li class="m-list__item">Done</li>
+            </ul>
+          </div>
+        </div>
+        <div class="m-select__selector js-m-select__selector">
+          <span class="p-order__edit__title">EDIT SECTION</span>
+          <i class="fas fa-caret-down p-order__icon"></i>
+          <ul class="m-list m-list--edit">
+            <li class="m-list__item m-list__item--edit">
+              <div class="m-form__checkbox m-form__checkbox--border">
+                <input type="checkbox" id="id">
+                <label for="id"></label>
+                <span>Order ID</span>
+              </div>
+            </li>
+            <li class="m-list__item m-list__item--edit">
+              <div class="m-form__checkbox m-form__checkbox--border">
+                <input type="checkbox" id="customer">
+                <label for="customer"></label>
+                <span>Customer</span>
+              </div>
+            </li>
+            <li class="m-list__item m-list__item--edit">
+              <div class="m-form__checkbox m-form__checkbox--border">
+                <input type="checkbox" id="productList">
+                <label for="productList"></label>
+                <span>Product List</span>
+              </div>
+            </li>
+            <li class="m-list__item m-list__item--edit">
+              <div class="m-form__checkbox m-form__checkbox--border">
+                <input type="checkbox" id="total">
+                <label for="total"></label>
+                <span>Total</span>
+              </div>
+            </li>
+            <li class="m-list__item m-list__item--edit">
+              <div class="m-form__checkbox m-form__checkbox--border">
+                <input type="checkbox" id="AddToCart">
+                <label for="AddToCart"></label>
+                <span>Add to Cart</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- 訂單細節 -->
+      <table class="m-table m-table--order">
+        <thead>
+          <tr>
+            <th class="m-table__checkbox"></th>
+            <th>Customer</th>
+            <th>Product List</th>
+            <th class="m-table__textRight p-order__total p-order__total">Total</th>
+            <th>Add to Cart</th>
+            <th>Check-out</th>
+            <th>Address</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-title="Check">
+              <div class="m-form__checkbox m-form__checkbox--frameless">
+                <input type="checkbox" id="one">
+                <label for="one"></label>
+              </div>
+            </td>
+            <td data-title="Customer">
+              <span>Ian Medina</span>
+            </td>
+            <td data-title="Product List" class="m-table__list">
+              <div class="m-table__content">
+                <div class="m-table__border m-table__border--list">
+                  <div class="mb-1">Vestibulum.</div>
+                  <div class="d-flex justify-content-between">
+                    <span class="m-table__textLight">$1,400</span>
+                    <span>1</span>
+                  </div>
+                </div>
+                <div class="m-table__border m-table__border--list">
+                  <div class="mb-1">Fusce vehicu.</div>
+                  <div class="d-flex justify-content-between">
+                    <span class="m-table__textLight">$800</span>
+                    <span>1</span>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td data-title="Total" class="m-table__textRight p-order__total">
+              $2,200
+            </td>
+            <td data-title="Add to Cart">
+              <div class="m-table__content">
+                <div class="mb-1">2018/6/8</div>
+                <div>13:39</div>
+              </div>
+            </td>
+            <td data-title="Check-out">
+              <div class="m-table__content">
+                <div class="mb-1">2018/6/8</div>
+                <div>20:23</div>
+              </div>
+            </td>
+            <td data-title="Address">
+              <div class="m-table__content">
+                <div class="mb-1">386 Windler Drives </div>
+                <div>pt. 358</div>
+              </div>
+            </td>
+            <td data-title="Status" class="m-table__btn">
+              <div class="e-btn e-btn--rise js-e-order-status">
+                PAID
+                <i class="fas fa-caret-down"></i>
+              </div>
+              <ul class="m-list m-list--orderStatus js-m-list">
+                <li class="m-list__item js-paid">Paid</li>
+                <li class="m-list__item js-unpaid">Unpaid</li>
+                <li class="m-list__item js-shipping">Shipping</li>
+                <li class="m-list__item js-done">Done</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td data-title="Check">
+              <div class="m-form__checkbox m-form__checkbox--frameless">
+                <input type="checkbox" id="one">
+                <label for="one"></label>
+              </div>
+            </td>
+            <td data-title="Customer">
+              <span>Ian Medina</span>
+            </td>
+            <td data-title="Product List" class="m-table__list">
+              <div class="m-table__content">
+                <div class="m-table__border m-table__border--list">
+                  <div class="mb-1">Vestibulum.</div>
+                  <div class="d-flex justify-content-between">
+                    <span class="m-table__textLight">$1,400</span>
+                    <span>1</span>
+                  </div>
+                </div>
+                <div class="m-table__border m-table__border--list">
+                  <div class="mb-1">Fusce vehicu.</div>
+                  <div class="d-flex justify-content-between">
+                    <span class="m-table__textLight">$800</span>
+                    <span>1</span>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td data-title="Total" class="m-table__textRight p-order__total">
+              $2,200
+            </td>
+            <td data-title="Add to Cart">
+              <div class="m-table__content">
+                <div class="mb-1">2018/6/8</div>
+                <div>13:39</div>
+              </div>
+            </td>
+            <td data-title="Check-out">
+              <div class="m-table__content">
+                <div class="mb-1">2018/6/8</div>
+                <div>20:23</div>
+              </div>
+            </td>
+            <td data-title="Address">
+              <div class="m-table__content">
+                <div class="mb-1">386 Windler Drives </div>
+                <div>pt. 358</div>
+              </div>
+            </td>
+            <td data-title="Status" class="m-table__btn">
+              <div class="e-btn e-btn--rise js-e-order-status">
+                PAID
+                <i class="fas fa-caret-down"></i>
+              </div>
+              <ul class="m-list m-list--orderStatus js-m-list">
+                <li class="m-list__item js-paid">Paid</li>
+                <li class="m-list__item js-unpaid">Unpaid</li>
+                <li class="m-list__item js-shipping">Shipping</li>
+                <li class="m-list__item js-done">Done</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  </section>
+
+
+  <!-- fontawesome -->
+  <script src="https://kit.fontawesome.com/a4ac11d7bb.js"></script>
+
+  <!-- bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+  <!-- 圖表 -->
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.5.4/c3.min.js"></script>
+
+  <!-- custom js -->
+  <script src="js/all.js"></script>
+
+</body>
+
+</html>

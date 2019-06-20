@@ -1,0 +1,22 @@
+* { 
+  box-sizing: border-box; 
+}
+
+html{
+  transition: all .5s;
+}
+
+body {
+  font-family: "Helvetica Neue";
+  background-color: #F2F2F2;
+  font-size: $base-font-size;
+}
+
+a{
+  text-decoration: none;
+  cursor: pointer;
+}
+
+input:focus{
+  outline: none;
+}

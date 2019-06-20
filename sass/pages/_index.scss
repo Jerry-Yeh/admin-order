@@ -1,0 +1,97 @@
+// 標題
+.p-info {
+  margin-bottom: 12px;
+  &__title {
+    font-size: $font-xl;
+  }
+
+  &__condition {
+    display: flex;
+    color: #9b9b9b;
+    margin-top: 8px;
+    justify-content: space-between;
+    @include mobile {
+      justify-content: flex-end;
+    }
+    &__date {
+      margin-right: 20px;
+    }
+
+    &__unit {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__arrow {
+    color: black;
+    &--right {
+      margin: 0 8px;
+    }
+
+    &--down {
+      text-align: right;
+      padding-left: 8px;
+      height: 24px;
+    }
+  }
+}
+
+// 數據
+.p-total {
+  margin-bottom: 18px;
+  &__col {
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 0;
+    &__icon {
+      font-size: $font-xl;
+      margin-right: 8px;
+    }
+    &__num {
+      font-size: $font-xxl;
+      margin-top: 14px;
+      &--revenue {
+        color: #7ed321;
+      }
+      &--cost {
+        color: #d0021b;
+      }
+      &--net {
+        color: #4a90e2;
+      }
+    }
+  }
+}
+
+// 圖表
+.p-chart {
+  margin-bottom: $grid-gutter-width;
+  &__content {
+    background-color: #fff;
+    padding: 30px 40px;
+  }
+  &__title {
+    font-size: $font-xl;
+    margin-bottom: 16px;
+  }
+  &__chart {
+  }
+}
+
+// 數據
+.p-data {
+  margin-bottom: 42px;
+  &__col {
+    background-color: #fff;
+    padding: 30px 40px;
+    height: 100%;
+    &__title {
+      font-size: $font-xl;
+      margin-bottom: 30px;
+    }
+  }
+}

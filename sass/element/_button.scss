@@ -1,0 +1,35 @@
+// 
+// button
+// 
+
+.e-btn {
+  display: inline-flex;
+  justify-content: center;
+  transition: .5s;
+  font-size: $font-s;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  @include btn-color($light, $black);
+  text-align: center;
+
+  i {
+    margin-left: 5px;
+  }
+
+  &--block {
+    width: 100%;
+    display: block;
+  }
+
+  // 顏色樣式
+  @each $name, $value in $theme-colors {
+    &--#{$name} {
+      @include btn-color($value, white);
+    }
+  }
+
+  &--white {
+    color: black;
+  }
+}

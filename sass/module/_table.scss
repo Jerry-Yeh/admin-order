@@ -1,0 +1,145 @@
+//
+// table
+//
+
+$m-table-line-spacing: 8px;
+$m-table-td-x-padding: 16px;
+
+.m-table {
+  width: 100%;
+  thead {
+    display: none;
+    @include mobile {
+      display: table-header-group;
+      background: white;
+      th:first-child {
+        padding-left: 40px;
+      }
+    }
+  }
+  tbody {
+    tr:nth-of-type(even) {
+      background-color: $primary-200;
+    }
+  }
+  // 訂單頁
+  &--order {
+    td,
+    th {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+  }
+  // 商品頁
+  &--product {
+    th {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+    td {
+      padding-top: 33px;
+      padding-bottom: 33px;
+    }
+  }
+
+  td,
+  th {
+    display: block;
+    &::before {
+      content: attr(data-title);
+      display: inline-flex;
+      width: 30%;
+    }
+    @include mobile {
+      display: table-cell;
+      padding-right: $m-table-td-x-padding;
+      padding-left: $m-table-td-x-padding;
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  &__border {
+    padding: 0;
+    &--size {
+      padding-bottom: 30px;
+    }
+    &:first-child {
+      padding-top: 0;
+    }
+    &:last-child {
+      padding-bottom: 0;
+    }
+    &--list {
+      padding: $m-table-line-spacing 0;
+      &:not(:last-child) {
+        border-bottom: 1px solid #ffffff;
+      }
+    }
+    &--colspan {
+      @include mobile {
+        padding: $m-table-line-spacing 0;
+      }
+      &:not(:last-child) {
+        @include mobile {
+          border-bottom: 1px solid #ffffff;
+        }
+      }
+    }
+  }
+  &__checkbox {
+    width: $checkbox-size + $m-table-line-spacing;
+  }
+  &__textLight {
+    color: $primary-300;
+  }
+
+  &__textRight {
+    @include mobile {
+      text-align: right;
+    }
+  }
+
+  &__text {
+    margin-bottom: $m-table-line-spacing;
+  }
+
+  &__btn {
+    position: relative;
+    &--bottom {
+      vertical-align: bottom;
+    }
+  }
+
+  &__content {
+    width: 68%;
+    display: inline-flex;
+    flex-direction: column;
+    @include mobile {
+      width: 100%;
+    }
+  }
+
+  &__colspan {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+
+    &__content {
+      width: 68%;
+      @include mobile {
+        width: 100%;
+      }
+      display: inline-flex;
+      @include mobile {
+        display: block;
+      }
+      &__item {
+        width: 33.3333%;
+        @include mobile {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

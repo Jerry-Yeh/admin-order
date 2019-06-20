@@ -1,0 +1,105 @@
+$navbar-height: 70px;
+
+.m-navbar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap; // allow us to do the line break for collapsing content
+  align-items: center;
+  justify-content: space-between; // space out brand from logo
+  background-color: $black;
+  height: $navbar-height;
+
+  // Because flex properties aren't inherited, we need to redeclare these first
+  // few properties so that content nested within behave properly.
+  > .container,
+  > .container-fluid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  &__brand {
+    color: white;
+    font-size: $font-xl;
+    margin-right: 60px;
+    margin-bottom: 8px;
+    &__link {
+      color: white;
+    }
+  }
+
+  &__list {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1;
+      transform: translateY(-100%);
+      background-color: $black;
+      width: 100%;
+      transition: .5s;
+      &.is-active {
+        transform: translateY(0);
+      }
+      @include tablet {
+        display: flex;
+        flex-direction: row; // cannot use `inherit` to get the `.navbar`s value
+        list-style: none;
+        position: static;
+        z-index: 0;
+        width: initial;
+        transform: translateY(0);
+      }
+  }
+
+  &__link {
+    @include content-center;
+    color: white;
+    transition: .5s;
+    padding: 25px 15px 21px;
+    margin: 0 5px;
+    border-bottom: 4px solid transparent;
+    height: $navbar-height;
+    &:hover {
+      color: white;
+      border-bottom: 4px solid white;
+    }
+    @include tablet {
+      color: #9B9B9B;
+    }
+    &--active {
+      @include mobile {
+        border-bottom: 4px solid white;
+      }
+    }
+  }
+
+  &__user {
+    margin-left: auto;
+    &__link {
+      color: white;
+      display: none;
+      @include tablet {
+        display: block;
+      }
+    }
+  }
+
+  // 選單按鈕
+  &__button {
+    color: white;
+    height: $navbar-height;
+    font-size: $font-xl;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    @include tablet {
+      display: none;
+    }
+
+
+  }
+}

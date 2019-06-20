@@ -1,0 +1,11 @@
+//
+// order
+//
+
+.p-order {
+  &__total {
+    @include mobile {
+      padding-right: 24px;
+    }
+  }
+}

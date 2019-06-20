@@ -1,0 +1,82 @@
+.m-transaction {
+  &__item {
+    display: flex;
+    align-items: center;
+    padding: 24px 0;
+    &:first-child {
+      padding-top: 0;
+    }
+    &:not(:last-child) {
+      border-bottom: 1px solid #EBEBEB;
+    }
+    &:last-child {
+      padding-bottom: 0;
+    }
+    &__icon {
+      font-size: $font-xxxl;
+      width: 45px;
+      margin-right: 20px;
+    }
+    &__title {
+      margin-right: auto;
+      color: #9B9B9B;
+    }
+    &__total {
+      margin-right: 20px;
+      font-size: $font-l;
+    }
+    &__rate {
+      position: relative;
+      &:hover {
+        cursor: pointer;
+      }
+      &--rise {
+        color: $rise;
+      }
+      &--drop {
+        color: $drop;
+      }
+    }
+    &__detail {
+      position: absolute;
+      top: -100px;
+      right: -60px;
+      width: 186px;
+      z-index: 1;
+      background-color: black;
+      padding: 20px 16px;
+      border-radius: 3px;
+      text-align: center;
+      display: none;
+      transition: 1s;
+      &.is-hover {
+        display: block;
+      }
+      &__increase {
+        font-size: 14px;
+        color: white;
+        margin-bottom: 8px;
+        &__num {
+          font-size: 20px;
+          color: $rise;
+        }
+      }
+      &__last {
+        color: #9B9B9B;
+      }
+    }
+    &__arrow {
+      position: absolute;
+      top: -16px;
+      right: 29px;
+      border-style: solid;
+      border-width: 8px 4px 0px ;
+      border-color: $primary transparent transparent;
+      display: none;
+      transition: 3s;
+      &.is-hover {
+        display:block;
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+//
+// product
+//
+
+$p-product-img-size: 50px;
+
+.p-product {
+  &__product {
+    position: relative;
+    display:flex;
+    align-items: center;
+    &__img {
+      @include size($p-product-img-size, $p-product-img-size);
+      @include bg-cover;
+      position: absolute;
+      transform: translateY(-$font-m);
+      left: 30%;
+      @include mobile {
+        left: $m-table-td-x-padding;
+      }
+    }
+    &__text {
+      padding-left: $p-product-img-size + $m-table-line-spacing;
+    }
+  }
+  &__size {
+    @include mobile {
+      padding-bottom: $font-m + $m-table-line-spacing * 2;
+    }
+  }
+}

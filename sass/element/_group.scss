@@ -1,0 +1,41 @@
+// 
+// group
+// 
+
+.e-group {
+  display: flex;
+  &__prepend {
+    margin-right: -1px;
+    >.e-group__text {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+  &__append {
+    margin-left: -1px;
+    >.e-group__text {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+  &__prepend, &__append {
+    display: flex;
+  }
+  &__text {
+    display: flex;
+    align-items: center;
+    background: #EBEBEB;
+    color: #55595C;
+    border: 1px solid #CCCCCC;
+    padding: 0 16px;
+    border-radius: 4px;
+  }
+  > .m-form__control:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  > .m-form__control:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
